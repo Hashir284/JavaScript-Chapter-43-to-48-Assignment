@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,14 +38,14 @@
             padding: 18px;
             text-align: center;
             backdrop-filter: blur(10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             transition: 0.4s ease;
             overflow: hidden;
         }
 
         figure:hover {
             transform: scale(1.03);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
         }
 
         figure img {
@@ -79,37 +80,79 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="gallery">
         <figure>
-            <img src="images/images (1).jpg" alt="mobile">
+            <img src="images/images (1).jpg" id="img1" alt="mobile" onmouseover="changeImage(1)" onmouseout="realimage(1)">
             <figcaption>
                 <a href="#" onclick="alert('Thanks for purchasing the Vivo Ultra phone from us')">Vivo Ultra</a>
             </figcaption>
         </figure>
 
         <figure>
-            <img src="images/images (2).jpg" alt="mobile">
+            <img src="images/images (2).jpg" id="img2" alt="mobile" onmouseover="changeImage(2)" onmouseout="realimage(2)">
             <figcaption>
                 <a href="#" onclick="alert('Thanks for purchasing the Iphone 11 phone from us')">Iphone 11</a>
             </figcaption>
         </figure>
 
         <figure>
-            <img src="images/images (3).jpg" alt="mobile">
+            <img src="images/images (3).jpg" id="img3" alt="mobile" onmouseover="changeImage(3)" onmouseout="realimage(3)">
             <figcaption>
                 <a href="#" onclick="alert('Thanks for purchasing the Vivo A10 phone from us')">Vivo A10</a>
             </figcaption>
         </figure>
 
         <figure>
-            <img src="images/images (4).jpg" alt="mobile">
+            <img src="images/images (4).jpg" id="img4" alt="mobile" onmouseover="changeImage(4)" onmouseout="realimage(4)">
             <figcaption>
                 <a href="#" onclick="alert('Thanks for purchasing the Redmi A3x phone from us')">Redmi A3x</a>
             </figcaption>
         </figure>
     </div>
 
+    <script>
+        function changeImage(i) {
+            if (i === 1) {
+                let random = Math.floor((Math.random() * 4) + 1)
+                if (random === 1) {
+                    random = 3
+                }
+                document.getElementById('img1').src = `images/images (${random}).jpg`
+            } else if (i === 2) {
+                let random = Math.floor((Math.random() * 4) + 1)
+                if (random === 2) {
+                    random = 4
+                }
+                document.getElementById('img2').src = `images/images (${random}).jpg`
+            } else if (i === 3) {
+                let random = Math.floor((Math.random() * 4) + 1)
+                if (random === 3) {
+                    random = 1
+                }
+                document.getElementById('img3').src = `images/images (${random}).jpg`
+            } else if (i === 4) {
+                let random = Math.floor((Math.random() * 4) + 1)
+                if (random === 4) {
+                    random = 2
+                }
+                document.getElementById('img4').src = `images/images (${random}).jpg`
+            }
+        }
+        function realimage(i) {
+            if (i === 1) {
+                document.getElementById('img1').src = `images/images (1).jpg`
+            } else if (i === 2) {
+                document.getElementById('img2').src = `images/images (2).jpg`
+            } else if (i === 3) {
+                document.getElementById('img3').src = `images/images (3).jpg`
+            } else if (i === 4) {
+                document.getElementById('img4').src = `images/images (4).jpg`
+            }
+        }
+    </script>
 </body>
+
 </html>
